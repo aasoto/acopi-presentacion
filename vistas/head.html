@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo $pagina_web["titulo_pestana"]?></title>
+    <meta name="title" content="<?php echo $pagina_web["titulo_pagina"]; ?>" />
+    <meta name="description" content="<?php echo $pagina_web["descripcion"]; ?>" />
+    <?php 
+        /**
+            Buscar a donde mandar esta parte del código, que no quede en el html
+        **/
+        /**
+            json_decode convierto los string en array, siempre y cuando tenga la sintaxis de array.
+        **/
+        $palabras_claves_array = json_decode($pagina_web ["palabras_claves"], true);
+        $palabras_claves = "";
+
+        foreach ($palabras_claves_array as $key => $value) {
+            $palabras_claves .= $value.", ";
+        }
+        //Esto quita los dos ultimos caracteres a la cadena de texto
+        $palabras_claves = substr($palabras_claves, 0, -2);
+    ?>
+    <meta name="keywords" content="<?php echo $palabras_claves; ?>" />
+    <meta name="author" content="" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/fontawesome-free/css/all.min.css">
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <link rel="shortcut icon" href="<?php echo 'administrador/public/'.$pagina_web["logo_pestana"]; ?>">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+    <!-- Pe-icon-7 icon -->
+    <link rel="stylesheet" type="text/css" href="css/pe-icon-7-stroke.css">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+
+    <!-- magnific pop-up -->
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
+
+    <!--Slider-->
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.css" />
+    <link rel="stylesheet" href="css/owl.transitions.css" />
+
+    <!-- MENU CUSTOM css -->
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script src="js/sweetalert.min.js"></script>
+
+    <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+    <link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet">
+
+</head>
+
+<body>
