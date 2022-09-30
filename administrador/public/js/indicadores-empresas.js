@@ -102,9 +102,9 @@ if ($("#indicadoresEmpresas")) {
         }
     }
 
-    console.log("String: ", empresas_activas);
+    console.log("String - empresas activas: ", empresas_activas);
     var datos_empresas_activas = JSON.parse(empresas_activas);
-    console.log("Array: ", datos_empresas_activas);
+    console.log("Array - empresas activas: ", datos_empresas_activas);
 
     /** EMPRESAS INACTIVAS **/
 
@@ -118,11 +118,11 @@ if ($("#indicadoresEmpresas")) {
         }
     }
 
-    console.log("String: ", empresas_inactivas);
+    console.log("String - empresas inactivas: ", empresas_inactivas);
     var datos_empresas_inactivas = JSON.parse(empresas_inactivas);
-    console.log("Array: ", datos_empresas_inactivas);
+    console.log("Array - empresas inactivas: ", datos_empresas_inactivas);
 
-    /** RECIBOS PENDIENTES **/
+    /** EMPRESAS NUEVAS **/
 
     var empresas_nuevas = "[";
 
@@ -134,9 +134,9 @@ if ($("#indicadoresEmpresas")) {
         }
     }
 
-    console.log("String: ", empresas_nuevas);
+    console.log("String - empresas nuevas: ", empresas_nuevas);
     var datos_empresas_nuevas = JSON.parse(empresas_nuevas);
-    console.log("Array: ", datos_empresas_nuevas);
+    console.log("Array - empresas nuevas: ", datos_empresas_nuevas);
 
     /*--=====  End of TRATAMIENTO DE DATOS  ======--*/
 

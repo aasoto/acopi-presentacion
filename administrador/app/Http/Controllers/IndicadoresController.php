@@ -8,6 +8,7 @@ use App\IndicadoresModel;
 use App\MesesModel;
 use App\PagosModel;
 use App\EmpresasModel;
+use Illuminate\Support\Facades\DB;
 
 class IndicadoresController extends Controller
 {
@@ -20,24 +21,69 @@ class IndicadoresController extends Controller
         }
 
         if (url()->current() == ($web["servidor"]."indicadores/empresas")) {
-            $indicadores = IndicadoresModel::all();
+            $num_registros = DB::table('datos_rango')->select('datos_rango.*')->where('id', 1)->get();
+
+            $indicadores = IndicadoresModel::orderBy('id', 'desc')->take($num_registros[0]->rango)->get();
+
+            if ($num_registros[0]->rango >= count($indicadores)) {
+                $num_registros[0]->rango = count($indicadores);
+                $num_registros[0]->nombre = count($indicadores).' meses';
+            }
+
+
+            $datos = array();
+            for ($i=0; $i < $num_registros[0]->rango; $i++) {
+                $datos[$i] = ' ';
+            }
+            $key_datos = $num_registros[0]->rango - 1;
+            for ($i=0; $i < $num_registros[0]->rango; $i++) {
+                $datos[$key_datos] = $indicadores[$i];
+                $key_datos--;
+            }
+            for ($i=0; $i < $num_registros[0]->rango; $i++) {
+                $indicadores[$i] = $datos[$i];
+                $indicadores[$i]['posicion'] = $i + 1;
+            }
             $meses = MesesModel::all();
             $total_indicadores = count($indicadores);
             $total_meses = count($meses);
-            return view("paginas.indicadores.empresas", array("indicadores" => $indicadores, "total_indicadores" => $total_indicadores, "meses" => $meses, "total_meses"=> $total_meses));
+            return view("paginas.indicadores.empresas", array("indicadores" => $indicadores, "total_indicadores" => $total_indicadores, "meses" => $meses, "total_meses"=> $total_meses, "num_registros" => $num_registros));
         }
 
         if (url()->current() == ($web["servidor"]."indicadores/recibos")) {
-            $indicadores = IndicadoresModel::all();
+            $num_registros = DB::table('datos_rango')->select('datos_rango.*')->where('id', 1)->get();
+
+            $indicadores = IndicadoresModel::orderBy('id', 'desc')->take($num_registros[0]->rango)->get();
+
+            if ($num_registros[0]->rango >= count($indicadores)) {
+                $num_registros[0]->rango = count($indicadores);
+                $num_registros[0]->nombre = count($indicadores).' meses';
+            }
+
+            $datos = array();
+            for ($i=0; $i < $num_registros[0]->rango; $i++) {
+                $datos[$i] = ' ';
+            }
+            $key_datos = $num_registros[0]->rango - 1;
+            for ($i=0; $i < $num_registros[0]->rango; $i++) {
+                $datos[$key_datos] = $indicadores[$i];
+                $key_datos--;
+            }
+            for ($i=0; $i < $num_registros[0]->rango; $i++) {
+                $indicadores[$i] = $datos[$i];
+                $indicadores[$i]['posicion'] = $i + 1;
+            }
+            //dd($indicadores);
             $meses = MesesModel::all();
             $total_indicadores = count($indicadores);
             $total_meses = count($meses);
-            return view("paginas.indicadores.recibos", array("indicadores" => $indicadores, "total_indicadores" => $total_indicadores, "meses" => $meses, "total_meses"=> $total_meses));
+            return view("paginas.indicadores.recibos", array("indicadores" => $indicadores, "total_indicadores" => $total_indicadores, "meses" => $meses, "total_meses"=> $total_meses, "num_registros" => $num_registros));
         }
 
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $mes = date("m", time());
         $year = date("Y", time());
         $existe = IndicadoresModel::where("mes", $mes)->where("year", $year)->get();
@@ -90,6 +136,13 @@ class IndicadoresController extends Controller
     public function update($id, Request $request) {
         /*echo '<pre>'; print_r($id); echo '</pre>';
 		return;*/
+        $num_registros = DB::table('datos_rango')
+            ->where('id', 1)
+            ->update([
+                'rango' => $_POST['num_registros'],
+                'nombre' => $_POST['num_registros_nombre']
+            ]);
+
         $mes = date("m", time());
         $year = date("Y", time());
         $existe = IndicadoresModel::where("mes", $mes)->where("year", $year)->get();

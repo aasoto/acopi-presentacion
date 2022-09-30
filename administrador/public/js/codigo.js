@@ -2885,10 +2885,14 @@ $(document).on("click", ".actualizarIndicadores", function () {
     var method = $(this).attr("method");
     var pagina = $(this).attr("pagina");
     var token = $(this).attr("token");
+    var num_registros = $('#num_meses').val();
+    var num_registros_nombre = document.getElementById('num_meses');
+    num_registros_nombre = num_registros_nombre.options[num_registros_nombre.selectedIndex].text;
+    console.log('nombre: ', num_registros_nombre);
 
     swal({
         title: '¿Desea actualizar las graficas?',
-        text: "Esta opción buscará en la base dedatos y arrogará la inforación actualizada de los ULTIMOS 6 MESES acerca de la información guardada.",
+        text: "Esta opción buscará en la base de datos y arrojará la información actualizada de los meses seleccionados en el recuadro ubicado a la izquierda del botón de actualizar.",
         type: 'question',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -2934,6 +2938,8 @@ $(document).on("click", ".actualizarIndicadores", function () {
                             if (result.value) {
                                 method = "PUT";
                                 var datos = new FormData();
+                                datos.append("num_registros", num_registros);
+                                datos.append("num_registros_nombre", num_registros_nombre);
                                 datos.append("_method", method);
                                 datos.append("_token", token);
                                 $.ajax({

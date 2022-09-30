@@ -283,6 +283,7 @@ if ($("#indicadores")) {
         var meses = JSON.parse($("#meses").val());
         var total_meses = $("#totalMeses").val();
 
+        console.log('total meses donut: ', total_meses);
         for (var i = 1; i <= total_meses; i++) {
             var donutChartCanvas = $('#donutChart-'+i).get(0).getContext('2d')
             var donutData = {

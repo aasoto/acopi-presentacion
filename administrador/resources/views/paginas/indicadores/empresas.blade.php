@@ -24,7 +24,16 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-3"></div>
+                        <div class="form-group col-md-1"></div>
+                        <div class="col-md-2">
+                            <select class="form-control select2bs4" name="num_meses" id="num_meses">
+                                <option value="{{$num_registros[0]->rango}}">{{$num_registros[0]->nombre}}</option>
+                                <option value="6">6 meses</option>
+                                <option value="12">1 año</option>
+                                <option value="18">1 año y 6 meses</option>
+                                <option value="24">2 años</option>
+                            </select>
+                        </div>
                         <div class="col-md-6">
                             <button class="btn btn-success col-md-12 actualizarIndicadores" action="{{ url()->current() }}" method="POST" pagina="indicadores/empresas" token="{{csrf_token()}}">
                                 <i class="fas fa-redo-alt"></i> Actualizar datos
@@ -105,7 +114,7 @@
                                                             </div>
                                                             <div class="card-body">
                                                                 <div class="chart">
-                                                                    <canvas id="donutChart-{{$indicador["mes"]}}"
+                                                                    <canvas id="donutChart-{{$indicador["posicion"]}}"
                                                                         style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                                                 </div>
                                                             </div>
@@ -124,7 +133,7 @@
                                                         </div>
                                                         <div class="card-body">
                                                             <div class="chart">
-                                                                <canvas id="donutChart-{{$indicador["mes"]}}"
+                                                                <canvas id="donutChart-{{$indicador["posicion"]}}"
                                                                     style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                                             </div>
                                                         </div>
@@ -145,6 +154,18 @@
                     </div>
                 </section>
             </div>
+            <script>
+                $(function() {
+                    //Initialize Select2 Elements
+                    $('.select2').select2()
+                    //Initialize Select2 Elements
+                    $('.select2bs4').select2({
+                        theme: 'bootstrap4'
+                    })
+                    //File-input
+                    bsCustomFileInput.init();
+                })
+            </script>
         @else
             @include('paginas/errores/401')
         @endif
