@@ -2701,6 +2701,96 @@ $(document).on("click", ".eliminarEmpleado", function () {
 
 /*=====  End of Eliminar Empleado  ======*/
 
+/*=========================================
+=            Eliminar Proyecto            =
+=========================================*/
+
+$(document).on("click", ".eliminarProyecto", function () {
+
+    var action = $(this).attr("action");
+    var method = $(this).attr("method");
+    var pagina = $(this).attr("pagina");
+    //var token = $(this).children("[name='_token']").attr("value");
+    var token = $(this).attr("token");
+
+    var imagen_proyecto = $(this).attr("imagen_proyecto");
+
+    swal({
+        title: '¿Está seguro de eliminar este proyecto?',
+        text: "¡Si no lo está puede cancelar la acción!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Sí, eliminar proyecto!'
+    }).then(function (result) {
+
+        if (result.value) {
+            var datos = "imagen_proyecto=" + imagen_proyecto;
+            $.ajax({
+                url: ruta + "/ajax/proyectos.php",
+                method: "POST",
+                data: datos,
+
+            }).done(function (respuesta) {
+                console.log("Hecho");
+            }).fail(function () {
+                console.log("Error");
+            }).always(function () {
+                console.log("Completado");
+            });
+
+            var datos = new FormData();
+            datos.append("_method", method);
+            datos.append("_token", token);
+
+            $.ajax({
+
+                url: action,
+                method: "POST",
+                data: datos,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (respuesta) {
+
+                    if (respuesta == "ok") {
+
+                        swal({
+                            type: "success",
+                            title: "¡El proyecto ha sido eliminado!",
+                            showConfirmButton: true,
+                            confirmButtonText: "Cerrar"
+
+                        }).then(function (result) {
+
+                            if (result.value) {
+
+                                window.location = ruta + '/' + pagina;
+
+                            }
+
+
+                        })
+
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.error(textStatus + " " + errorThrown);
+                }
+
+            })
+
+        }
+
+    })
+
+})
+
+/*=====  End of Eliminar Proyecto  ======*/
+
 /*=======================================
 =            Agregar usuario            =
 =======================================*/

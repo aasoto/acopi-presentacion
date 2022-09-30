@@ -219,6 +219,23 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-6">
+                                            <!-- small box -->
+                                            <div class="small-box bg-lime">
+                                                <div class="inner">
+                                                    <h3>Proyectos</h3>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="icon">
+                                                    <i class="fas fa-project-diagram"></i>
+                                                </div>
+                                                <a href="{{ url('proyectos') }}" class="small-box-footer">Gestionar <i
+                                                        class="fas fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 @endif
                                 @if (Auth::user()->rol == 'Director ejecutivo')
                                     <div class="row">
@@ -315,6 +332,21 @@
                                                     <i class="fas fa-file-pdf"></i>
                                                 </div>
                                                 <a href="{{ url('documentos/inicio') }}" class="small-box-footer">Gestionar <i
+                                                        class="fas fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                            <!-- small box -->
+                                            <div class="small-box bg-lime">
+                                                <div class="inner">
+                                                    <h3>Proyectos</h3>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="icon">
+                                                    <i class="fas fa-project-diagram"></i>
+                                                </div>
+                                                <a href="{{ url('proyectos') }}" class="small-box-footer">Gestionar <i
                                                         class="fas fa-arrow-circle-right"></i></a>
                                             </div>
                                         </div>
@@ -504,6 +536,23 @@
                                                     <i class="fas fa-file-pdf"></i>
                                                 </div>
                                                 <a href="{{ url('documentos/inicio') }}" class="small-box-footer">Gestionar <i
+                                                        class="fas fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-6">
+                                            <!-- small box -->
+                                            <div class="small-box bg-lime">
+                                                <div class="inner">
+                                                    <h3>Proyectos</h3>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="icon">
+                                                    <i class="fas fa-project-diagram"></i>
+                                                </div>
+                                                <a href="{{ url('proyectos') }}" class="small-box-footer">Gestionar <i
                                                         class="fas fa-arrow-circle-right"></i></a>
                                             </div>
                                         </div>

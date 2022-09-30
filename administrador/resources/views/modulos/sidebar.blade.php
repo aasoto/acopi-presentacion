@@ -486,6 +486,19 @@
             </li>
             <!--=====  End of Menú de Documentos  ======-->
 
+            <!--=====================================
+            =            Menú de Proyectos            =
+            =====================================-->
+            <li class="nav-item">
+                <a href="{{ url('proyectos') }}" class="nav-link">
+                    <i class="nav-icon fas fa-project-diagram"></i>
+                    <p>
+                        Proyectos
+                    </p>
+                </a>
+            </li>
+            <!--=====  End of Menú de Proyectos  ======-->
+
             <!--=============================================
             =            Menú página web            =
             =============================================-->
@@ -645,6 +658,19 @@
                 </a>
             </li>
             <!--=====  End of Menú de Documentos  ======-->
+
+            <!--=====================================
+            =            Menú de Proyectos            =
+            =====================================-->
+            <li class="nav-item">
+                <a href="{{ url('proyectos') }}" class="nav-link">
+                    <i class="nav-icon fas fa-project-diagram"></i>
+                    <p>
+                        Proyectos
+                    </p>
+                </a>
+            </li>
+            <!--=====  End of Menú de Proyectos  ======-->
 
             <!--=============================================
             =            Menú página web            =
@@ -845,6 +871,19 @@
                 </a>
             </li>
             <!--=====  End of Menú de Documentos  ======-->
+
+            <!--=====================================
+            =            Menú de Proyectos            =
+            =====================================-->
+            <li class="nav-item">
+                <a href="{{ url('proyectos') }}" class="nav-link">
+                    <i class="nav-icon fas fa-project-diagram"></i>
+                    <p>
+                        Proyectos
+                    </p>
+                </a>
+            </li>
+            <!--=====  End of Menú de Proyectos  ======-->
 
             <!--=============================================
             =            Menú página web            =

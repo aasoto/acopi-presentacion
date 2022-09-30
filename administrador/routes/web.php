@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\ProyectosController;
+
 Route::get('/', function () {
     return view('plantilla');
 });
@@ -140,5 +142,7 @@ Route::resource('/indicadores/inicio', 'IndicadoresController');
 Route::resource('/indicadores/empresas', 'IndicadoresController');
 Route::resource('/indicadores/recibos', 'IndicadoresController');
 
+/*----------- Proyectos -----------*/
+Route::resource('proyectos', ProyectosController::class);
 
 /*=====  End of Rutas que incluyen todos los metodos HTML  ======*/
