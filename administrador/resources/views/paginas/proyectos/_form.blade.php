@@ -24,7 +24,13 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label for="nameEditor">Descripción del proyecto</label>
-                <textarea class="form-control summernote-sm" name="descripcion" rows="10">{{ old("descripcion", $proyecto->descripcion) }}</textarea>
+                <textarea class="form-control" name="descripcion" rows="3">{{ old("descripcion", $proyecto->descripcion) }}</textarea>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="nameEditor">Contenido del proyecto</label>
+                <textarea class="form-control summernote-sm" name="contenido" rows="10">{{ old("descripcion", $proyecto->contenido) }}</textarea>
             </div>
         </div>
         <div class="col-md-12">

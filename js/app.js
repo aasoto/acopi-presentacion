@@ -37,6 +37,17 @@
             itemsTablet: [568, 1]
 
             });
+
+            $("#owl-carousel2").owlCarousel({
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+                items: 3,
+          
+
+            itemsDesktop : [1024, 2],
+            itemsDesktopSmall : [768, 1],
+            itemsTablet: [568, 1]
+
+            });
      
 // ----- MAIN-MENU ----- //
 

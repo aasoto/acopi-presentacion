@@ -5,6 +5,7 @@
 $pagina_web = ControladorPagina::ctrMostrarPagina();
 $noticias = ControladorPagina::ctrMostrarConInnerJoin();
 $noticias_destacadas = ControladorPagina::ctrMostrarNoticiasDestacadas();
+$proyectos = ControladorPagina::ctrMostrarProyectos();
 $videos_entrevistas = ControladorPagina::ctrMostrarEntrevistas();
 //$noticias_todas = ControladorPagina::ctrMostrarNoticias();
 
@@ -22,7 +23,16 @@ if(isset($_GET["pagina"])){
     if(($_GET["pagina"] == "noticias") && (isset($_GET["pestana"]))){
         include "paginas/noticias-todas.php";
     }
+    if(($_GET["pagina"] == "noticias_year") && (isset($_GET["year"]) && (isset($_GET["pestana"])))){
+        include "paginas/noticias-year.php";
+    }
+    if(($_GET["pagina"] == "eventos") && (isset($_GET["pestana"]))){
+        include "paginas/eventos.php";
+    }
     if(($_GET["pagina"] == "contenido_noticia") && (isset($_GET["id"]))){
+        include "paginas/".$_GET["pagina"].".php";
+    }
+    if(($_GET["pagina"] == "proyecto-informacion") && (isset($_GET["id"]))){
         include "paginas/".$_GET["pagina"].".php";
     }
     if($_GET["pagina"] == "info-directivos"){

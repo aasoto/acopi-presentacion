@@ -11,5 +11,5 @@ class ProyectosModel extends Model
 
     protected $table = 'proyectos';
 
-    protected $fillable = ['sector_id', 'nombre', 'descripcion', 'imagen_proyecto'];
+    protected $fillable = ['sector_id', 'nombre', 'descripcion', 'contenido', 'imagen_proyecto'];
 }

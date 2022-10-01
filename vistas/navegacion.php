@@ -31,15 +31,12 @@
             <!-- Navigation Menu-->
             <ul class="navigation-menu">
                 <li class="has-submenu ">
-                    <a href="/acopi">Inicio</a>
+                    <a href="/acopi-laravel-9">Inicio</a>
                 </li>
                 <li class="has-submenu">
                     <a href="#features">Acerca de nosotros</a>
                     <span class="menu-arrow"></span>
                     <ul class="submenu">
-<!--                        <li>-->
-<!--                            <a href="vistas/paginas/info-directivos.php">Información directivos</a>-->
-<!--                        </li>-->
                         <li>
                             <a href="index.php?pagina=info-directivos">Información directivos </a>
                         </li>
@@ -61,16 +58,13 @@
                     <a href="index.php?pagina=noticias&pestana=1">Noticias</a>
                 </li>
                 <li class="has-submenu">
+                    <a href="index.php?pagina=eventos&pestana=1">Eventos</a>
+                </li>
+                <li class="has-submenu">
                     <a href="index.php?pagina=productos">Productos y servicios</a>
                 </li>
                 <li class="has-submenu">
                     <a href="index.php?pagina=entrevistas">Entrevistas</a>
-                </li>
-                <li class="has-submenu">
-                    <a href="#team">Cliente</a>
-                </li>
-                <li class="has-submenu">
-                    <a href="#blog">Blog</a>
                 </li>
                 <li class="has-submenu">
                     <a href="#pages">Cuenta</a>
@@ -78,9 +72,6 @@
                     <ul class="submenu">
                         <li>
                             <a href="<?php echo $pagina_web['servidor'];?>">Iniciar sesión</a>
-                        </li>
-                        <li>
-                            <a href="blog-standard.html">Solicitar cuenta.</a>
                         </li>
                     </ul>
                 </li>

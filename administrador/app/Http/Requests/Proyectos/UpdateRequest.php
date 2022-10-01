@@ -26,7 +26,8 @@ class UpdateRequest extends FormRequest
         return [
             'sector_id' => 'required|integer',
             'nombre' => 'required|max:200|string',
-            'descripcion' => 'required|string',
+            'descripcion' => 'required|string|max:370',
+            'contenido' => 'required|string',
             'imagen_proyecto' => 'nullable|image|mimes:jpeg,jpg,png|max:10240'
         ];
     }

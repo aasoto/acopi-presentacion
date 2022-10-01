@@ -55,11 +55,45 @@ class ControladorPagina
         return $respuesta;
     }
 
+    static public function ctrContarNoticiasAndYear($year){
+        $tabla = "noticias";
+
+        $respuesta = ModeloPagina::mdlContarNoticiasAndYear($tabla, $year);
+
+        return $respuesta;
+    }
+
+    static public function ctrContarEventos(){
+        $tabla = "noticias";
+
+        $respuesta = ModeloPagina::mdlContarEventos($tabla);
+
+        return $respuesta;
+    }
+
     static public function ctrMostrarNoticiasConPaginacion($pestana, $noticias_por_pestana){
         $tabla1 = "categorias";
         $tabla2 = "noticias";
 
         $respuesta = ModeloPagina::mdlMostrarNoticiasConPaginacion($pestana, $noticias_por_pestana, $tabla1, $tabla2);
+
+        return $respuesta;
+    }
+
+    static public function ctrMostrarNoticiasConPaginacionAndYear($year, $pestana, $noticias_por_pestana){
+        $tabla1 = "categorias";
+        $tabla2 = "noticias";
+
+        $respuesta = ModeloPagina::mdlMostrarNoticiasConPaginacionAndYear($year, $pestana, $noticias_por_pestana, $tabla1, $tabla2);
+
+        return $respuesta;
+    }
+
+    static public function ctrMostrarEventosConPaginacion($pestana, $eventos_por_pestana){
+        $tabla1 = "categorias";
+        $tabla2 = "noticias";
+
+        $respuesta = ModeloPagina::mdlMostrarEventosConPaginacion($pestana, $eventos_por_pestana, $tabla1, $tabla2);
 
         return $respuesta;
     }
@@ -77,8 +111,29 @@ class ControladorPagina
     {
         #se le manda el nombre de la tabla al modelo blog para que esta nos de la respuesta
         $tabla = "entrevistas";
+        
 
         $respuesta = ModeloPagina::mdlMostrarEntrevistas($tabla);
+
+        return $respuesta;
+    }
+
+    static public function ctrMostrarProyectos()
+    {
+        #se le manda el nombre de la tabla al modelo blog para que esta nos de la respuesta
+        $tabla1 = "sector_empresa";
+        $tabla2 = "proyectos";
+
+        $respuesta = ModeloPagina::mdlMostrarProyectos($tabla1, $tabla2);
+
+        return $respuesta;
+    }
+
+    static public function ctrConsultaProyectoConID($id_proyecto){
+        $tabla1 = "sector_empresa";
+        $tabla2 = "proyectos";
+
+        $respuesta = ModeloPagina::mdlConsultaProyectoConID($tabla1, $tabla2, $id_proyecto);
 
         return $respuesta;
     }
