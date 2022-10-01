@@ -146,6 +146,20 @@ class EntrevistasController extends Controller
 		 	'link' => $request->input("video_entrevista")
 		);
 
+        # -----------  Transformación de la URL del video  -----------
+		$link_largo = "https://www.youtube.com/watch?v=";
+		$link_corto = "https://youtu.be/";
+		$link_nuevo = "https://www.youtube.com/embed/";
+
+		$largo = strpos($datos["link"], $link_largo);
+		$corto = strpos($datos["link"], $link_corto);
+
+		if ($largo !== false) {
+			$datos['link'] = str_replace($link_largo, $link_nuevo, $datos['link']);
+		}elseif ($corto !== false) {
+			$datos['link'] = str_replace($link_corto, $link_nuevo, $datos['link']);
+		}
+
     	if(!empty($datos)){
 
     		$validar = \Validator::make($datos,[

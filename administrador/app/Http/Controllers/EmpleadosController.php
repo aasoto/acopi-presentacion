@@ -16,6 +16,7 @@ class EmpleadosController extends Controller
         $generos = GeneroModel::all();
         $tipos_documentos = TipoDocumentoModel::all();
         $roles = RolesModel::all();
+        $rolesJSON = json_encode($roles);
 
         if (request()->ajax()) {
             return datatables()->of(EmpleadosModel::all())
@@ -67,9 +68,10 @@ class EmpleadosController extends Controller
                 })
 
                 ->addColumn('procedimientos', function ($data) {
+
                     $procedimientos = '
     				<div class="btn-group">
-						<a title="Ver más" class="btn btn-primary btn-sm verMasEmpleado">
+						<a title="Ver más" class="btn btn-primary btn-sm verMasEmpleado" tipo_documento="'.$data->tipo_documento.'" num_documento="'.$data->num_documento.'" primer_nombre="'.$data->primer_nombre.'" segundo_nombre="'.$data->segundo_nombre.'" primer_apellido="'.$data->primer_apellido.'" segundo_apellido="'.$data->segundo_apellido.'" sexo="'.$data->sexo.'" fecha_nacimiento="'.$data->fecha_nacimiento.'" email="'.$data->email.'" id_rol="'.$data->id_rol.'" estado="'.$data->estado.'" foto="'.$data->foto.'">
 							<i class="fas fa-eye"></i>
 						</a>
 						<a href="' . url()->current() . '/' . $data->id . '" title="Editar" class="btn btn-warning btn-sm editarAfiliado">
@@ -87,7 +89,7 @@ class EmpleadosController extends Controller
                 ->make(true);
         }
 
-        return view("paginas.empleados.general", array("generos" => $generos, "tipos_documentos" => $tipos_documentos, "roles" => $roles));
+        return view("paginas.empleados.general", array("generos" => $generos, "tipos_documentos" => $tipos_documentos, "roles" => $roles, "rolesJSON" => $rolesJSON));
     }
 
     public function store(Request $request)

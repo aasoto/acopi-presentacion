@@ -73,7 +73,7 @@ class NoticiasController extends Controller
     			"descripcion" => 'required|regex:/^[=\\(\\)\\&\\$\\;\\-\\_\\*\\"\\<\\>\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/i',
     			"palabras_claves"=> 'required|regex:/^[,\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/i',
     			"ruta_noticia"=> "required|regex:/^[-\\a-z0-9]+$/i",
-    			"contenido_noticia" => 'required|regex:/^[(\\)\\=\\&\\$\\;\\-\\_\\*\\"\\<\\>\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/i',
+    			"contenido_noticia" => 'required|string',
     			"portada_noticia"=> "required|image|mimes:jpg,jpeg,png|max:2000000"
 
     		]);

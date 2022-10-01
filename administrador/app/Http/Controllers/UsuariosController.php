@@ -33,7 +33,7 @@ class UsuariosController extends Controller
 								<a href="' . url()->current() . '/' . $data->id . '" class="btn btn-warning btn-sm">
 									<i class="fas fa-pencil-alt text-white"></i>
 								</a>
-								<button class="btn btn-danger btn-sm eliminarRegistro" foto="' . $data->foto . '" action="' . url()->current() . '/' . $data->id . '" method="DELETE" pagina="usuarios/consultarUser" token="' . csrf_token() . '">
+								<button class="btn btn-danger btn-sm eliminarRegistro" foto="' . $data->foto . '" email="' . $data->email . '" action="' . url()->current() . '/' . $data->id . '" method="DELETE" pagina="usuarios/consultarUser" token="' . csrf_token() . '">
 								<i class="fas fa-trash-alt"></i>
 								</button>
                             </div>';
@@ -316,7 +316,7 @@ class UsuariosController extends Controller
 
     public function destroy($id, Request $request)
     {
-
+        EmpleadosModel::where('email', $_POST['email'])->update(['id_usuario' => null]);
         $validar = UsuariosModel::where("id", $id)->get();
         if (!empty($validar) && $id != 1) {
             if (!empty($validar[0]["foto"])) {

@@ -43,7 +43,7 @@
                                             <i class="fas fa-plus"></i> Nueva Noticia
                                         </button>
                                     </a>
-                                    <a href="{{ url('/') }}/pagina_web/categorias">
+                                    <a href="{{ route('categorias.index') }}">
                                         <button type="submit" class="btn btn-default col-md-5">
                                             <i class="fas fa-edit"></i> Editar categorías
                                         </button>

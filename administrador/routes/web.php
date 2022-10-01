@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\ProyectosController;
 
 Route::get('/', function () {
@@ -144,5 +145,8 @@ Route::resource('/indicadores/recibos', 'IndicadoresController');
 
 /*----------- Proyectos -----------*/
 Route::resource('proyectos', ProyectosController::class);
+
+/*----------- Categorias -----------*/
+Route::resource('categorias', CategoriasController::class);
 
 /*=====  End of Rutas que incluyen todos los metodos HTML  ======*/

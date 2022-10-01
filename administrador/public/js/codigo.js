@@ -516,6 +516,7 @@ $(document).on("click", ".eliminarRegistro", function () {
     var pagina = $(this).attr("pagina");
     //var token = $(this).children("[name='_token']").attr("value");
     var token = $(this).attr("token");
+    var email = $(this).attr('email');
 
 
     swal({
@@ -546,6 +547,7 @@ $(document).on("click", ".eliminarRegistro", function () {
         });*/
 
             var datos = new FormData();
+            datos.append("email", email);
             datos.append("_method", method);
             datos.append("_token", token);
 
@@ -1668,6 +1670,81 @@ $(document).on("click", ".verMasAfiliado", function () {
 
 /*=====  End of Ver afiliado  ======*/
 
+/*====================================
+=            Ver afiliado            =
+====================================*/
+
+$(document).on("click", ".verMasEmpleado", function () {
+    var tipo_documento = $(this).attr("tipo_documento");
+    var num_documento = $(this).attr("num_documento");
+    var primer_nombre = $(this).attr("primer_nombre");
+    var segundo_nombre = $(this).attr("segundo_nombre");
+    var primer_apellido = $(this).attr("primer_apellido");
+    var segundo_apellido = $(this).attr("segundo_apellido");
+    var fecha_nacimiento = $(this).attr("fecha_nacimiento");
+    var sexo = $(this).attr("sexo");
+    var email = $(this).attr("email");
+    var id_rol = $(this).attr("id_rol");
+    var roles = $('#rolesJSON').val();
+    var estado = $(this).attr("estado");
+    var foto = $(this).attr("foto");
+    roles = JSON.parse(roles);
+    console.log('roles: ', roles[0]['rol']);
+
+    document.getElementById("consultaEmpleado").style.visibility = "";
+
+    var tipo_documento_validado;
+    if (tipo_documento == "CC") {
+        tipo_documento_validado = "Cédula de ciudadanía";
+    } else {
+        if (tipo_documento == "PAP") {
+            tipo_documento_validado = "Pasaporte";
+        } else {
+            if (tipo_documento == "TI") {
+                tipo_documento_validado = "Tarjeta de identidad";
+            } else {
+                tipo_documento_validado = "Sin verificar";
+            }
+        }
+    }
+
+    var genero;
+    if (sexo == "M") {
+        genero = "Masculino";
+    } else {
+        if (sexo == "F") {
+            genero = "Femenino";
+        } else {
+            genero = "Sin especificar";
+        }
+    }
+
+    var rol;
+    for (let index = 0; index < roles.length; index++) {
+        if (id_rol == roles[index]['id']) {
+            rol = roles[index]['rol'];
+        }
+    }
+
+    rol = rol + " - " + estado;
+
+    foto = ruta + "/" + foto;
+    document.getElementById("foto").src = foto;
+
+    document.getElementById('email').textContent = email ?? '-';
+    document.getElementById('tipo_documento').textContent = tipo_documento_validado ?? '-';
+    document.getElementById('num_cedula').textContent = num_documento ?? '-';
+    document.getElementById('nombre_completo').textContent = primer_apellido + " " + segundo_apellido + " " + primer_nombre + " " + segundo_nombre;
+    document.getElementById('genero').textContent = genero ?? '-';
+    document.getElementById('fecha_nacimiento').textContent = fecha_nacimiento ?? '-';
+    document.getElementById('telefono').textContent = rol ?? '-';
+
+    $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().remove();
+    document.getElementById("tarjetaInformacionEmpleado").classList.remove("collapsed-card");
+})
+
+/*=====  End of Ver afiliado  ======*/
+
 /*===================================
 =            Ver empresa            =
 ===================================*/
@@ -2760,6 +2837,82 @@ $(document).on("click", ".eliminarProyecto", function () {
                         swal({
                             type: "success",
                             title: "¡El proyecto ha sido eliminado!",
+                            showConfirmButton: true,
+                            confirmButtonText: "Cerrar"
+
+                        }).then(function (result) {
+
+                            if (result.value) {
+
+                                window.location = ruta + '/' + pagina;
+
+                            }
+
+
+                        })
+
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.error(textStatus + " " + errorThrown);
+                }
+
+            })
+
+        }
+
+    })
+
+})
+
+/*=====  End of Eliminar Proyecto  ======*/
+
+/*=========================================
+=            Eliminar Proyecto            =
+=========================================*/
+
+$(document).on("click", ".eliminarCategoria", function () {
+
+    var action = $(this).attr("action");
+    var method = $(this).attr("method");
+    var pagina = $(this).attr("pagina");
+    //var token = $(this).children("[name='_token']").attr("value");
+    var token = $(this).attr("token");
+
+
+    swal({
+        title: '¿Está seguro de eliminar este categoría?',
+        text: "¡Si no lo está puede cancelar la acción!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Sí, eliminar categoría!'
+    }).then(function (result) {
+
+        if (result.value) {
+
+            var datos = new FormData();
+            datos.append("_method", method);
+            datos.append("_token", token);
+
+            $.ajax({
+
+                url: action,
+                method: "POST",
+                data: datos,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (respuesta) {
+
+                    if (respuesta == "ok") {
+
+                        swal({
+                            type: "success",
+                            title: "¡La categoría ha sido eliminada!",
                             showConfirmButton: true,
                             confirmButtonText: "Cerrar"
 
