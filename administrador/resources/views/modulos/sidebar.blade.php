@@ -554,6 +554,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="{{ url('pagina_web/info/organigrama') }}" class="nav-link">
+                                    <i class="fas fa-network-wired nav-icon"></i>
+                                    <p>Organigrama</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ url('pagina_web/footer?ver=footer') }}" class="nav-link">
                                     <i class="far fa-thumbs-up nav-icon"></i>
                                     <p>Redes sociales</p>
@@ -724,6 +730,12 @@
                                 <a href="{{ url('pagina_web/info/gremio') }}" class="nav-link">
                                     <i class="fas fa-user-tie nav-icon"></i>
                                     <p>Gremio y directivos</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('pagina_web/info/organigrama') }}" class="nav-link">
+                                    <i class="fas fa-network-wired nav-icon"></i>
+                                    <p>Organigrama</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -979,6 +991,12 @@
                                 <a href="{{ url('pagina_web/info/gremio') }}" class="nav-link">
                                     <i class="fas fa-user-tie nav-icon"></i>
                                     <p>Gremio y directivos</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('pagina_web/info/organigrama') }}" class="nav-link">
+                                    <i class="fas fa-network-wired nav-icon"></i>
+                                    <p>Organigrama</p>
                                 </a>
                             </li>
                             <li class="nav-item">

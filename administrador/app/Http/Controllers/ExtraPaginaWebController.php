@@ -17,7 +17,10 @@ class ExtraPaginaWebController extends Controller
     public function update($id, Request $request){
 
     	$datos = array(
-    		'historia' => $request->input("historia"),
+    		'quienes_somos' => $request->input("quienes_somos"),
+		 	'mision' => $request->input("mision"),
+		 	'vision' => $request->input("vision"),
+            'historia' => $request->input("historia"),
 		 	'actualidad' => $request->input("actualidad"),
 		 	'proyeccion' => $request->input("proyeccion")
 		);
@@ -25,7 +28,10 @@ class ExtraPaginaWebController extends Controller
     	if(!empty($datos)){
 
     		$validar = \Validator::make($datos,[
-    			"historia"=> "nullable|string",
+    			"quienes_somos" => "nullable|string",
+                "mision" => "nullable|string",
+                "vision" => "nullable|string",
+                "historia" => "nullable|string",
     			"actualidad" => 'nullable|string',
     			"proyeccion" => 'nullable|string'
     		]);
@@ -39,7 +45,10 @@ class ExtraPaginaWebController extends Controller
     		}else{
 
     			$actualizar = array(
-    				'historia' => $datos["historia"],
+    				'quienes_somos' => $datos["quienes_somos"],
+                    'mision' => $datos["mision"],
+                    'vision' => $datos["vision"],
+                    'historia' => $datos["historia"],
     				'actualidad' => $datos["actualidad"],
     				'proyeccion' => $datos["proyeccion"]
     			);

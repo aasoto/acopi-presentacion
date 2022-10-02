@@ -395,6 +395,16 @@
                                             </a>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-12">
+                                            <a href="{{ url('pagina_web/info/organigrama') }}">
+                                                <div class="info-box shadow">
+                                                    <span class="info-box-icon bg-primary"><i class="fas fa-network-wired"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-number">Organigrama</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-12">
                                             <a href="{{ url('pagina_web/footer?ver=footer') }}">
                                                 <div class="info-box shadow">
                                                     <span class="info-box-icon bg-primary"><i class="far fa-thumbs-up"></i></span>
@@ -414,6 +424,8 @@
                                                 </div>
                                             </a>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-3 col-sm-6 col-12">
                                             <a href="{{ url('pagina_web/footer?ver=footer') }}">
                                                 <div class="info-box shadow">
@@ -527,6 +539,16 @@
                                                     <span class="info-box-icon bg-primary"><i class="fas fa-user-tie"></i></span>
                                                     <div class="info-box-content">
                                                         <span class="info-box-number">Gremio y directivos</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-12">
+                                            <a href="{{ url('pagina_web/info/organigrama') }}">
+                                                <div class="info-box shadow">
+                                                    <span class="info-box-icon bg-primary"><i class="fas fa-network-wired"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-number">Organigrama</span>
                                                     </div>
                                                 </div>
                                             </a>
@@ -713,6 +735,16 @@
                                             </a>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-12">
+                                            <a href="{{ url('pagina_web/info/organigrama') }}">
+                                                <div class="info-box shadow">
+                                                    <span class="info-box-icon bg-primary"><i class="fas fa-network-wired"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-number">Organigrama</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-12">
                                             <a href="{{ url('pagina_web/info/productos') }}">
                                                 <div class="info-box shadow">
                                                     <span class="info-box-icon bg-primary"><i class="fab fa-product-hunt"></i></span>
@@ -732,6 +764,8 @@
                                                 </div>
                                             </a>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-3 col-sm-6 col-12">
                                             <a href="{{ url('pagina_web/info/estatutos') }}">
                                                 <div class="info-box shadow">
@@ -742,8 +776,6 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-3 col-sm-6 col-12">
                                             <a href="{{ url('pagina_web/footer?ver=footer') }}">
                                                 <div class="info-box shadow">

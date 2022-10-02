@@ -30,8 +30,90 @@
                             enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
-                            <input type="hidden" name="listaAliados" id="listaAliados" value="{{ $element->aliados }}">
-                            <input type="hidden" name="eliminar" id="eliminar" value="no">
+
+                            <div class="card card-warning">
+                                <div class="card-header">
+                                    <h3 class="card-title">¿Quienes somos?</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label for="historia">Digite o edite aquí el ¿Quienes somos?</label>
+                                            <textarea class="form-control summernote-sm" name="quienes_somos" rows="10">{{ $element->quienes_somos }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-warning col-md-6" name="guardar" id="guardar">
+                                            <i class="fas fa-check"></i> Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-warning">
+                                <div class="card-header">
+                                    <h3 class="card-title">Misión</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label for="historia">Digite o edite aquí la misión de la agremiación</label>
+                                            <textarea class="form-control summernote-sm" name="mision" rows="10">{{ $element->mision }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-warning col-md-6" name="guardar" id="guardar">
+                                            <i class="fas fa-check"></i> Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-warning">
+                                <div class="card-header">
+                                    <h3 class="card-title">Visión</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label for="historia">Digite o edite aquí la visión de la agremiación</label>
+                                            <textarea class="form-control summernote-sm" name="vision" rows="10">{{ $element->vision }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-warning col-md-6" name="guardar" id="guardar">
+                                            <i class="fas fa-check"></i> Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="card card-warning">
                                 <div class="card-header">

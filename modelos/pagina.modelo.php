@@ -216,6 +216,18 @@ class ModeloPagina{
         $stmt = null;
     }
 
+    static public function mdlMostrarEntrevistasUltimas($tabla){
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id DESC LIMIT 3");
+
+        $stmt -> execute();
+
+        return $stmt -> fetchAll();
+
+        $stmt -> close();
+
+        $stmt = null;
+    }
+
     static public function mdlMostrarProyectos($tabla1, $tabla2){
         $stmt = Conexion::conectar()->prepare("SELECT $tabla1.*, $tabla2.* FROM $tabla1 INNER JOIN $tabla2 ON $tabla1.id_sector = $tabla2.sector_id");
 

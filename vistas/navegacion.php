@@ -52,6 +52,15 @@
                         <li>
                             <a href="blog-post.html">Alianzas estrategicas</a>
                         </li>
+                        <li>
+                            <a href="index.php?pagina=historia">Historia</a>
+                        </li>
+                        <li>
+                            <a href="index.php?pagina=actualidad">Actualidad</a>
+                        </li>
+                        <li>
+                            <a href="index.php?pagina=proyeccion">Proyección</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="has-submenu">

@@ -41,6 +41,15 @@ if(isset($_GET["pagina"])){
     if($_GET["pagina"] == "mision"){
         include "paginas/".$_GET["pagina"].".php";
     }
+    if($_GET["pagina"] == "historia"){
+        include "paginas/".$_GET["pagina"].".php";
+    }
+    if($_GET["pagina"] == "actualidad"){
+        include "paginas/".$_GET["pagina"].".php";
+    }
+    if($_GET["pagina"] == "proyeccion"){
+        include "paginas/".$_GET["pagina"].".php";
+    }
     if($_GET["pagina"] == "organigrama"){
         include "paginas/".$_GET["pagina"].".php";
     }
@@ -48,7 +57,7 @@ if(isset($_GET["pagina"])){
         include "paginas/".$_GET["pagina"]."_completo.php";
     }
     if($_GET["pagina"] == "entrevistas"){
-        include "paginas/videos.php";
+        include "paginas/".$_GET['pagina']."-todas.php";
     }
     if($_GET["pagina"] == "ingreso"){
         include "paginas/".$_GET["pagina"].".php";
@@ -58,7 +67,7 @@ if(isset($_GET["pagina"])){
     include "paginas/carrusel.php";
     include "paginas/noticias.php";
     include "paginas/proyectos.php";
-    include "paginas/videos.php";
+    include "paginas/entrevistas.php";
     include "paginas/productos_completo.php";
     include "paginas/aliados.php";
 }

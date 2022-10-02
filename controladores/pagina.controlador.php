@@ -118,6 +118,17 @@ class ControladorPagina
         return $respuesta;
     }
 
+    static public function ctrMostrarEntrevistasUltimas()
+    {
+        #se le manda el nombre de la tabla al modelo blog para que esta nos de la respuesta
+        $tabla = "entrevistas";
+        
+
+        $respuesta = ModeloPagina::mdlMostrarEntrevistasUltimas($tabla);
+
+        return $respuesta;
+    }
+
     static public function ctrMostrarProyectos()
     {
         #se le manda el nombre de la tabla al modelo blog para que esta nos de la respuesta
