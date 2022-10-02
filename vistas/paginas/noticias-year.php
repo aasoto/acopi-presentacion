@@ -6,10 +6,10 @@
     $pagina_web = ControladorPagina::ctrMostrarPagina();
 
     if (!$_GET['year']) {
-        header('Location:index.php?pagina=noticias&year='.$_GET['year'].'&pestana=1');
+        header('Location:index.php?pagina=noticias_year&year='.$_GET['year'].'&pestana='.$_GET['pestana']);
     }
 
-    $noticias_todas = ControladorPagina::ctrMostrarNoticiasConPaginacionAndYear($_GET['year'], 1, $noticias_por_pagina)
+    $noticias_todas = ControladorPagina::ctrMostrarNoticiasConPaginacionAndYear($_GET['year'], $_GET['pestana'], $noticias_por_pagina)
 
 ?>
 <section class="section" id="features">
@@ -90,36 +90,24 @@
                             </p>
                         </div>
                         <div class="col-12  ">
-                                <a href="index.php?pagina=contenido_noticia&id=<?php echo $value["id"]; ?>">
-                                    <h3 class="d-block  py-3"><?php echo $value["titulo"]; ?></h3>
-                                </a>
-                            </div>
-
-
-
-
+                            <a href="index.php?pagina=contenido_noticia&slug=<?php echo $value["ruta_noticia"]; ?>">
+                                <h3 class="d-block  py-3"><?php echo $value["titulo"]; ?></h3>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <a href="index.php?pagina=contenido_noticia&id=<?php echo $value["id"]; ?>">
+                        <a href="index.php?pagina=contenido_noticia&slug=<?php echo $value["ruta_noticia"]; ?>">
                             <div class="position-relative">
-
                                 <img src="<?php echo $pagina_web["servidor"]; echo $value["portada_noticia"]; ?>" alt="portada <?php echo $value["descripcion_noticia"];  ?>" width="100%">
                             </div>
-
                         </a>
                     </div>
                     <div class="col-8">
                         <div class="col-12  introArticulo">
-                            <!--                        <a href="index.php?pagina=contenido_noticia&id=--><?php //echo $value["id"]; ?><!--">-->
-                            <!--                            <h3 class="d-none d-lg-block ">-->
-                            <!--                                --><?php //echo $value["titulo"]; ?>
-                            <!--                            </h3>-->
-                            <!--                        </a>-->
                             <p class="title-desc text-muted "><?php echo $value["descripcion_noticia"]; ?></p>
-                            <a href="index.php?pagina=contenido_noticia&id=<?php echo $value["id"]; ?>" class=" read-more font-weight-bold">Leer Más</a>
-                            <!--                        <div class="fecha">--><?php //echo str_replace('.','/',$value["fecha_noticia"]); ?><!--</div>-->
+                            <a href="index.php?pagina=contenido_noticia&slug=<?php echo $value["ruta_noticia"]; ?>" class=" read-more font-weight-bold">Leer Más</a>
                         </div>
                     </div>
                 </div>
@@ -131,18 +119,16 @@
                 <div class="justify-content-center row">
                     <nav aria-label="Page navigation example col-10">
                         <ul class="pagination flex-wrap">
-                            <li class="page-item <?php echo $_GET['pestana']<=1 ? 'disabled' : '' ?>"><a class="page-link" href="index.php?pagina=noticias&pestana=<?php echo $_GET['pestana']-1; ?>">Anterior</a></li>
+                            <li class="page-item <?php echo $_GET['pestana']<=1 ? 'disabled' : '' ?>"><a class="page-link" href="index.php?pagina=noticias_year&year=<?php echo $_GET['year'] ?>&pestana=<?php echo $_GET['pestana']-1; ?>">Anterior</a></li>
                             <?php for ($i=0; $i < $total_paginas; $i++): ?>
-                            <li class="page-item <?php echo $_GET['pestana']==$i+1 ? 'active' : '' ?>"><a class="page-link" href="index.php?pagina=noticias&pestana=<?php echo $i+1; ?>"><?php echo $i+1; ?></a></li>
+                            <li class="page-item <?php echo $_GET['pestana']==$i+1 ? 'active' : '' ?>"><a class="page-link" href="index.php?pagina=noticias_year&year=<?php echo $_GET['year'] ?>&pestana=<?php echo $i+1; ?>"><?php echo $i+1; ?></a></li>
                             <?php endfor ?>
-                            <li class="page-item <?php echo $_GET['pestana']>=$total_paginas? 'disabled' : '' ?>"><a class="page-link" href="index.php?pagina=noticias&pestana=<?php echo $_GET['pestana']+1; ?>">Siguiente</a></li>
+                            <li class="page-item <?php echo $_GET['pestana']>=$total_paginas? 'disabled' : '' ?>"><a class="page-link" href="index.php?pagina=noticias_year&year=<?php echo $_GET['year'] ?>&pestana=<?php echo $_GET['pestana']+1; ?>">Siguiente</a></li>
                         </ul>
                     </nav>
                 </div>
                 <!--Fin paginación-->
-            </div>
-
-            
+            </div>            
         </div>
     </div>
 </div>

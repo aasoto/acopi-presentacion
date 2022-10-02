@@ -93,42 +93,24 @@ $noticias_todas = ControladorPagina::ctrMostrarNoticiasConPaginacion($_GET['pest
                                     </p>
                                 </div>
                                 <div class="col-12  ">
-                                    <a href="index.php?pagina=contenido_noticia&id=<?php echo $value["id"]; ?>">
+                                    <a href="index.php?pagina=contenido_noticia&slug=<?php echo $value["ruta_noticia"]; ?>">
                                         <h3 class="d-block  py-3"><?php echo $value["titulo"]; ?></h3>
                                     </a>
                                 </div>
-
-
-
-
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-4">
-                                <a href="index.php?pagina=contenido_noticia&id=<?php echo $value["id"]; ?>">
+                                <a href="index.php?pagina=contenido_noticia&slug=<?php echo $value["ruta_noticia"]; ?>">
                                     <div class="position-relative">
-
-                                        <img src="<?php echo $pagina_web["servidor"];
-                                                    echo $value["portada_noticia"]; ?>" alt="portada <?php echo $value["descripcion_noticia"];  ?>" width="100%">
+                                        <img src="<?php echo $pagina_web["servidor"]; echo $value["portada_noticia"]; ?>" alt="portada <?php echo $value["descripcion_noticia"];  ?>" width="100%">
                                     </div>
-
                                 </a>
                             </div>
                             <div class="col-8">
                                 <div class="col-12  introArticulo">
-                                    <!--                        <a href="index.php?pagina=contenido_noticia&id=--><?php //echo $value["id"]; 
-                                                                                                                    ?>
-                                    <!--">-->
-                                    <!--                            <h3 class="d-none d-lg-block ">-->
-                                    <!--                                --><?php //echo $value["titulo"]; 
-                                                                            ?>
-                                    <!--                            </h3>-->
-                                    <!--                        </a>-->
                                     <p class="title-desc text-muted "><?php echo $value["descripcion_noticia"]; ?></p>
-                                    <a href="index.php?pagina=contenido_noticia&id=<?php echo $value["id"]; ?>" class=" read-more font-weight-bold">Leer Más</a>
-                                    <!--                        <div class="fecha">--><?php //echo str_replace('.','/',$value["fecha_noticia"]); 
-                                                                                        ?>
-                                    <!--</div>-->
+                                    <a href="index.php?pagina=contenido_noticia&slug=<?php echo $value["ruta_noticia"]; ?>" class=" read-more font-weight-bold">Leer Más</a>
                                 </div>
                             </div>
                         </div>
@@ -150,8 +132,6 @@ $noticias_todas = ControladorPagina::ctrMostrarNoticiasConPaginacion($_GET['pest
                     </div>
                     <!--Fin paginación-->
                 </div>
-
-
             </div>
         </div>
     </div>

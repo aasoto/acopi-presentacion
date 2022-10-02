@@ -98,11 +98,11 @@ class ControladorPagina
         return $respuesta;
     }
 
-    static public function ctrConsultaNoticiasGeneralConID($id_noticia){
+    static public function ctrConsultaNoticiasGeneralConSlug($slug_noticia){
         $tabla1 = "categorias";
         $tabla2 = "noticias";
 
-        $respuesta = ModeloPagina::mdlConsultaGeneralConID($tabla1, $tabla2, $id_noticia);
+        $respuesta = ModeloPagina::mdlConsultaNoticiaConSlug($tabla1, $tabla2, $slug_noticia);
 
         return $respuesta;
     }

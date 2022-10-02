@@ -172,6 +172,22 @@ class ModeloPagina{
         $stmt = null;
     }
 
+    static public function mdlConsultaNoticiaConSlug($tabla1, $tabla2, $slug_noticia){
+        //$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id = :noticia_id");
+        
+        $stmt = Conexion::conectar()->prepare("SELECT $tabla1.*, $tabla2.*, DATE_FORMAT(fecha_noticia, '%d.%m.%Y') AS fecha_noticia FROM $tabla1 INNER JOIN $tabla2 ON $tabla1.id_categoria = $tabla2.categoria WHERE $tabla2.ruta_noticia = '$slug_noticia'");
+
+        //$stmt -> bindParam(':noticia_slug', $slug_noticia, PDO::PARAM_INT);
+
+        $stmt -> execute();
+
+        return $stmt -> fetch();
+
+        $stmt -> close();
+
+        $stmt = null;
+    }
+
     static public function mdlConsultaProyectoConID($tabla1, $tabla2, $id_proyecto){
         //$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id = :noticia_id");
 

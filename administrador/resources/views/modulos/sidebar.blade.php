@@ -571,6 +571,12 @@
                                     <p>Información de contacto</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ url('pagina_web/info/extra') }}" class="nav-link">
+                                    <i class="far fa-clock nav-icon"></i>
+                                    <p>Extra</p>
+                                </a>
+                            </li>
                         </ul>
                         <!--=====  End of Submenú Información  ======-->
 
@@ -724,6 +730,12 @@
                                 <a href="{{ url('pagina_web/info/estatutos') }}" class="nav-link">
                                     <i class="fas fa-balance-scale nav-icon"></i>
                                     <p>Estatutos y etica</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('pagina_web/info/extra') }}" class="nav-link">
+                                    <i class="far fa-clock nav-icon"></i>
+                                    <p>Extra</p>
                                 </a>
                             </li>
                         </ul>
@@ -991,6 +1003,12 @@
                                 <a href="{{ url('pagina_web/footer?ver=footer') }}" class="nav-link">
                                     <i class="fas fa-phone-alt nav-icon"></i>
                                     <p>Información de contacto</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('pagina_web/info/extra') }}" class="nav-link">
+                                    <i class="far fa-clock nav-icon"></i>
+                                    <p>Extra</p>
                                 </a>
                             </li>
                         </ul>

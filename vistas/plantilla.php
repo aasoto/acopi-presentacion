@@ -29,7 +29,7 @@ if(isset($_GET["pagina"])){
     if(($_GET["pagina"] == "eventos") && (isset($_GET["pestana"]))){
         include "paginas/eventos.php";
     }
-    if(($_GET["pagina"] == "contenido_noticia") && (isset($_GET["id"]))){
+    if(($_GET["pagina"] == "contenido_noticia") && (isset($_GET["slug"]))){
         include "paginas/".$_GET["pagina"].".php";
     }
     if(($_GET["pagina"] == "proyecto-informacion") && (isset($_GET["id"]))){

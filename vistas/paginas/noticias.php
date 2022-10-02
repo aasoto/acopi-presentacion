@@ -46,50 +46,28 @@ CONTENIDO NOTICIAS
                                 ?>
                             </p>
                         </div>
-                        <a href="index.php?pagina=contenido_noticia&id=<?php echo $value["id"]; ?>" class="position-relative">
-
-
-
+                        <a href="index.php?pagina=contenido_noticia&slug=<?php echo $value["ruta_noticia"]; ?>" class="position-relative">
                             <h3 class="d-inline-block  d-md-block py-3"><?php echo $value["titulo"]; ?></h3>
-
                         </a>
-
                     </div>
                     <div class="col-4 ">
-
-                        <a href="index.php?pagina=contenido_noticia&id=<?php echo $value["id"]; ?>" >
-
-                                <img src="<?php echo $pagina_web["servidor"]; echo $value["portada_noticia"]; ?>" alt="portada <?php echo $value["descripcion_noticia"];  ?>" class="img-fluid" width="100%">
+                        <a href="index.php?pagina=contenido_noticia&slug=<?php echo $value["ruta_noticia"]; ?>" >
+                            <img src="<?php echo $pagina_web["servidor"]; echo $value["portada_noticia"]; ?>" alt="portada <?php echo $value["descripcion_noticia"];  ?>" class="img-fluid" width="100%">
                         </a>
                     </div>
-
-
                     <div class="col-8">
                         <div class="col-12 col-lg-10 introArticulo">
-
-                            <!--                        <a href="index.php?pagina=contenido_noticia&id=--><?php //echo $value["id"]; ?><!--">-->
-                            <!--                            <h3 class="title-heading d-none d-lg-block d-md-none ">-->
-                            <!--                                --><?php //echo $value["titulo"]; ?>
-                            <!--                            </h3>-->
-                            <!--                        </a>-->
                             <p class="title-desc text-muted  ml-1"><?php echo $value["descripcion_noticia"]; ?></p>
-                            <a href="index.php?pagina=contenido_noticia&id=<?php echo $value["id"]; ?>" class="read-more font-weight-bold">Leer Más</a>
-
+                            <a href="index.php?pagina=contenido_noticia&slug=<?php echo $value["ruta_noticia"]; ?>" class="read-more font-weight-bold">Leer Más</a>
                         </div>
                     </div>
-
                 </div>
                 <hr class="mb-4 mb-lg-5" style="border: 1px solid #152452">
                 <?php } ?>
-
-                
             </div>
-
-
             <div class="text-center">
                 <a href="index.php?pagina=noticias&pestana=1" class="read-more font-weight-bold"> Ver todas las noticias     <i class="mdi mdi-arrow-right"></i></a>
             </div>
-            
         </div>
     </div>
 </div>

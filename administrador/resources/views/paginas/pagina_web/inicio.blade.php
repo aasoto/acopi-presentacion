@@ -424,6 +424,16 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        <div class="col-md-3 col-sm-6 col-12">
+                                            <a href="{{ url('pagina_web/info/extra') }}">
+                                                <div class="info-box shadow">
+                                                    <span class="info-box-icon bg-primary"><i class="far fa-clock"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-number">Extra</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </ul>
                             </li>
@@ -527,6 +537,16 @@
                                                     <span class="info-box-icon bg-primary"><i class="fas fa-balance-scale"></i></span>
                                                     <div class="info-box-content">
                                                         <span class="info-box-number">Estatutos y ética</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-12">
+                                            <a href="{{ url('pagina_web/info/extra') }}">
+                                                <div class="info-box shadow">
+                                                    <span class="info-box-icon bg-primary"><i class="far fa-clock"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-number">Extra</span>
                                                     </div>
                                                 </div>
                                             </a>
@@ -730,6 +750,16 @@
                                                     <span class="info-box-icon bg-primary"><i class="fas fa-phone-alt"></i></span>
                                                     <div class="info-box-content">
                                                         <span class="info-box-number">Contacto</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-12">
+                                            <a href="{{ url('pagina_web/info/extra') }}">
+                                                <div class="info-box shadow">
+                                                    <span class="info-box-icon bg-primary"><i class="far fa-clock"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-number">Extra</span>
                                                     </div>
                                                 </div>
                                             </a>

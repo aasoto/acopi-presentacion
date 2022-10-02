@@ -1,4 +1,4 @@
-<?php $noticia = ControladorPagina::ctrConsultaNoticiasGeneralConID($_GET["id"]); 
+<?php $noticia = ControladorPagina::ctrConsultaNoticiasGeneralConSlug($_GET["slug"]); 
 $pagina_web = ControladorPagina::ctrMostrarPagina();
 ?>
 
