@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 //Route::view('/', 'paginas.inicio');
+Route::view('/plantilla', 'paginas.plantilla');
 Route::view('/pagina_web/inicio', 'paginas.pagina_web.inicio');
 Route::view('/afiliados/inicio', 'paginas.afiliados.inicio');
 Route::view('/documentos/inicio', 'paginas.documentos.inicio');

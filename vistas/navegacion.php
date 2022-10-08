@@ -44,7 +44,7 @@
                             <a href="index.php?pagina=mision">Misión y Visión</a>
                         </li>
                         <li>
-                            <a href="blog-standard.html">Estatutos y codigo de ética</a>
+                            <a href="index.php?pagina=blog-standard.html">Estatutos y codigo de ética</a>
                         </li>
                         <li>
                             <a href="index.php?pagina=organigrama">Organigrama</a>
