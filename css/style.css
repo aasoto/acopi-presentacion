@@ -590,6 +590,7 @@ button:focus {
         4.  FEATURES
 *******************************/
 
+
 .features-img img {
     width: 50px;
 }
@@ -1197,6 +1198,9 @@ view-more-button:after {
     border-bottom: 1px solid #dddddd;
 }
 
+.card-entrevista{
+    height: 400px;
+}
 
 /*******************************
        20.  RESPONSIVE
@@ -1239,10 +1243,19 @@ view-more-button:after {
         padding-left:0.8rem;
         padding-right: 0.8rem;
     }
-
+    .card-entrevista{
+        height: 500px;
+    }
 }
 
 @media (max-width: 320px) {
+    .d-flex .card-entrevista{
+        width: 180px;
+        height: auto;
+    }
+    .card-entrevista iframe{
+        width: 160px;
+    }
     #carouselExampleControls  .home-content{
         padding-inline:0rem ;
         max-width: 80%;

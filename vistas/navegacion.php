@@ -73,7 +73,7 @@
                     <a href="index.php?pagina=productos">Productos y servicios</a>
                 </li>
                 <li class="has-submenu">
-                    <a href="index.php?pagina=entrevistas">Entrevistas</a>
+                    <a href="index.php?pagina=entrevistas">Voz a Voz</a>
                 </li>
                 <li class="has-submenu">
                     <a href="#pages">Cuenta</a>
