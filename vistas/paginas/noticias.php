@@ -2,7 +2,7 @@
 CONTENIDO NOTICIAS
 ======================================-->
 
-<section class="section" id="features">
+<section class="section py-2" id="features">
 <div class="container-fluid bg-white contenidoInicio pb-4">
     
     <div class="container">

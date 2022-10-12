@@ -70,10 +70,12 @@ button:focus {
     /*******************************
            1.  HELPER
     *******************************/
-
+·topnav{
+    width: 100%!important;
+}
 .section {
-    padding-bottom: 80px;
-    padding-top: 80px;
+    padding-bottom: 50px;
+    padding-top: 50px;
     position: relative;
 }
 
@@ -431,7 +433,7 @@ button:focus {
 }
 .carousel-noticias .home-content{
     margin-top: 15vh !important;
-    padding-inline: ;
+
 }
 
 .carousel-noticias .home-center{
@@ -1205,7 +1207,7 @@ view-more-button:after {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px ) {
     .bg-home{
       height: auto;
     }
@@ -1217,7 +1219,7 @@ view-more-button:after {
         margin-top: 10vh;
     }
     .home-content{
-        padding-inline:1rem ;
+        /*padding-inline:1rem ;*/
     }
 
     .bg-home-6{
@@ -1241,6 +1243,10 @@ view-more-button:after {
 }
 
 @media (max-width: 320px) {
+    #carouselExampleControls  .home-content{
+        padding-inline:0rem ;
+        max-width: 80%;
+    }
     .carousel-app-phone:after {
         display: none;
     }
@@ -1250,10 +1256,15 @@ view-more-button:after {
     }
 
     .home-slider .carousel-item,
-.home-slider .carousel{
-    height:auto;
-}
-
+    .home-slider .carousel{
+        height:auto;
+    }
+    .blog-lable{
+        left: 80%;
+    }
+    .slider-principal .home-title,.slider-principal .home-desc{
+        word-break: break-all;
+    }
 
 }
 

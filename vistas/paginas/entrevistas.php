@@ -2,7 +2,8 @@
 $entrevistas = ControladorPagina::ctrMostrarEntrevistasUltimas();
 $pagina_web = ControladorPagina::ctrMostrarPagina();
 ?>
-<section class="section bg-light" id="blog">
+
+<section class="section bg-light  " id="blog">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -11,7 +12,7 @@ $pagina_web = ControladorPagina::ctrMostrarPagina();
                         <h4 class="title-heading">Entrevistas</h4>
                     </a>
                     <p class="title-desc text-muted mt-4">
-                        Una parte importante que nuestro trabajo.
+                        Una parte importante de nuestro trabajo.
                     </p>
                     <a href="index.php?pagina=entrevistas">
                         <div class="title-border mt-5">
@@ -27,10 +28,10 @@ $pagina_web = ControladorPagina::ctrMostrarPagina();
         <div class="row mt-5 pt-4" style="display: flex">
 
             <?php foreach ($entrevistas as $key => $value) { ?>
-                <div class="col-lg-4 bg-white">
-                    <div class="blog-content mt-4  col-11">
-                        <div class="blog-image ">
-                            <iframe width="286" height="180" src="<?php echo $value['video_entrevista']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="col-lg-4 bg-white px-sm-2 px-md-1">
+                    <div class="blog-content mt-4  col-11 pl-2 pr-0 mr-0">
+                        <div class="blog-image " >
+                            <iframe  src="<?php echo $value['video_entrevista']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%"></iframe>
                         </div>
                         <div class="blog-content bg-white p-1 pb-4 pb-lg-5">
                             <h3 class="mt-2"><a href="" class="blog-link f-17"><?php echo $value["titulo_entrevista"]; ?></a></h3>

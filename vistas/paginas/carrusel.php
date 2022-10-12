@@ -1,4 +1,4 @@
-<section class="home-slider" id="home" style="margin-top: 65px; min-height: 80%">
+<section class="home-slider  " id="home" style="margin-top: 65px; min-height: 80%">
     <div class="container-fluid">
         <div class="row">
             <div id="carouselExampleControls" class="carousel slide carousel-noticias" data-ride="carousel">
@@ -41,17 +41,17 @@
                                                         echo '<div class="container">
                                                                 <div class="row vertical-content">
                                                                     <div class="col-lg-6">
-                                                                        <div class="home-content mt-4 slider-principal text-wrap text-break">
+                                                                        <div class=" home-content mt-4 slider-principal text-wrap text-break px-md-0">
                                                             ';
                                                                             if ($value["categoria"] != 'undefined' )
                                                                             {
                                                                                 echo '<h4 class="home-subtitle">'.$value["categoria"].'</h4>';
                                                                             }
                                                                             if ($value["titulo"] != 'undefined'){
-                                                                               echo '<h2 class="home-title my-4">'.$value["titulo"].'</h2>' ;
+                                                                               echo '<h2 class="home-title my-4 text-break " >'.$value["titulo"].'</h2>' ;
                                                                             }
                                                                             if ($value["texto"] != 'undefined'){
-                                                                               echo '<p class="home-desc mt-4 f-17">'.$value["texto"].'</p>';
+                                                                               echo '<p class="home-desc mt-4 f-17 text-break" >'.$value["texto"].'</p>';
                                                                             }
 
 
@@ -185,7 +185,7 @@
                                                             <div class="row vertical-content">
                 
                                                                 <div class="col-lg-7">
-                                                                    <div class="home-content mt-2 slider-principal text-wrap text-break">
+                                                                    <div class="home-content mt-2 slider-principal text-wrap text-break px-md-0">
                                                          ';
                                                                         /*if ($value["categoria"] != 'undefined' && $value["titulo"] != 'undefined' && $value["texto"] != 'undefined')
                                                                         {
@@ -201,10 +201,10 @@
                                                                             echo '<h4 class="home-subtitle ">'.$value["categoria"].'</h4>';
                                                                         }
                                                                         if ($value["titulo"] != 'undefined'){
-                                                                            echo '<h2 class="home-title my-4">'.$value["titulo"].'</h2>' ;
+                                                                            echo '<h2 class="home-title my-4 text-break" >'.$value["titulo"].'</h2>' ;
                                                                         }
                                                                         if ($value["texto"] != 'undefined'){
-                                                                            echo '<p class="home-desc mt-4 f-17">'.$value["texto"].'</p>';
+                                                                            echo '<p class="home-desc mt-4 f-17 text-break" >'.$value["texto"].'</p>';
                                                                         }
 
                                                                         echo '<div class="mt-4">';
