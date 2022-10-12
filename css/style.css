@@ -1202,16 +1202,35 @@ view-more-button:after {
     height: 400px;
 }
 
+.wrap-entrevistas{
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(230px,1fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+}
 /*******************************
        20.  RESPONSIVE
 *******************************/
+@media (max-width: 1300px) {
+
+    .wrap-entrevistas{
+        grid-template-columns: repeat(3, minmax(230px,1fr));
+    }
+}
 @media (max-width: 990px) {
     .footer-title{
         margin-top: 30px;
     }
+    .wrap-entrevistas{
+        grid-template-columns: repeat(2, minmax(230px,1fr));
+    }
 }
 
 @media (max-width: 768px ) {
+    .wrap-entrevistas{
+        grid-template-columns: repeat(2, minmax(230px,1fr));
+    }
     .bg-home{
       height: auto;
     }
@@ -1247,8 +1266,15 @@ view-more-button:after {
         height: 500px;
     }
 }
-
+@media (max-width: 580px ) {
+    .wrap-entrevistas{
+        grid-template-columns: repeat(1, minmax(230px,1fr));
+    }
+}
 @media (max-width: 320px) {
+
+
+
     .d-flex .card-entrevista{
         width: 180px;
         height: auto;

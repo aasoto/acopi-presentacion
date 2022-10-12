@@ -31,7 +31,7 @@
             <!-- Navigation Menu-->
             <ul class="navigation-menu">
                 <li class="has-submenu ">
-                    <a href="/acopi-laravel-9">Inicio</a>
+                    <a href="<?php echo ($pagina_web['dominio']) ?>">Inicio</a>
                 </li>
                 <li class="has-submenu">
                     <a href="#features">Acerca de nosotros</a>
@@ -50,7 +50,7 @@
                             <a href="index.php?pagina=organigrama">Organigrama</a>
                         </li>
                         <li>
-                            <a href="blog-post.html">Alianzas estrategicas</a>
+                            <a href="index.php?pagina=alianzas">Alianzas estrategicas</a>
                         </li>
                         <li>
                             <a href="index.php?pagina=historia">Historia</a>
