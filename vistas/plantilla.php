@@ -7,6 +7,7 @@ $noticias = ControladorPagina::ctrMostrarConInnerJoin();
 $noticias_destacadas = ControladorPagina::ctrMostrarNoticiasDestacadas();
 $proyectos = ControladorPagina::ctrMostrarProyectos();
 $videos_entrevistas = ControladorPagina::ctrMostrarEntrevistas();
+$found = false;
 //$noticias_todas = ControladorPagina::ctrMostrarNoticias();
 
 //echo '<pre class="bg-white">'; print_r($noticias); echo '</pre>';
@@ -22,47 +23,63 @@ include "navegacion.php";
 if(isset($_GET["pagina"])){
     if(($_GET["pagina"] == "noticias") && (isset($_GET["pestana"]))){
         include "paginas/noticias-todas.php";
+        $found = true;
     }
     if(($_GET["pagina"] == "noticias_year") && (isset($_GET["year"]) && (isset($_GET["pestana"])))){
         include "paginas/noticias-year.php";
+        $found = true;
     }
     if(($_GET["pagina"] == "eventos") && (isset($_GET["pestana"]))){
         include "paginas/eventos.php";
+        $found = true;
     }
     if(($_GET["pagina"] == "contenido_noticia") && (isset($_GET["slug"]))){
         include "paginas/".$_GET["pagina"].".php";
+        $found = true;
     }
     if(($_GET["pagina"] == "proyecto-informacion") && (isset($_GET["id"]))){
         include "paginas/".$_GET["pagina"].".php";
+        $found = true;
     }
     if($_GET["pagina"] == "info-directivos"){
          include "paginas/".$_GET["pagina"].".php";
-     }
+         $found = true;
+    }
     if($_GET["pagina"] == "mision"){
         include "paginas/".$_GET["pagina"].".php";
+        $found = true;
     }
     if($_GET["pagina"] == "historia"){
         include "paginas/".$_GET["pagina"].".php";
+        $found = true;
     }
     if($_GET["pagina"] == "actualidad"){
         include "paginas/".$_GET["pagina"].".php";
+        $found = true;
     }
     if($_GET["pagina"] == "proyeccion"){
         include "paginas/".$_GET["pagina"].".php";
+        $found = true;
     }
     if($_GET["pagina"] == "organigrama"){
         include "paginas/".$_GET["pagina"].".php";
+        $found = true;
     }
     if($_GET["pagina"] == "productos"){
         include "paginas/".$_GET["pagina"]."_completo.php";
+        $found = true;
     }
     if($_GET["pagina"] == "entrevistas"){
         include "paginas/".$_GET['pagina']."-todas.php";
+        $found = true;
     }
     if($_GET["pagina"] == "ingreso"){
         include "paginas/".$_GET["pagina"].".php";
+        $found = true;
     }
-
+    if ($found == false) {
+        include "paginas/404.html";
+    }
 }else{
     include "paginas/carrusel.php";
     include "paginas/noticias.php";
