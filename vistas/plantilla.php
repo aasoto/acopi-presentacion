@@ -45,7 +45,15 @@ if(isset($_GET["pagina"])){
          include "paginas/".$_GET["pagina"].".php";
          $found = true;
     }
+    if($_GET["pagina"] == "aliados-list"){
+        include "paginas/".$_GET["pagina"].".php";
+        $found = true;
+    }
     if($_GET["pagina"] == "mision"){
+        include "paginas/".$_GET["pagina"].".php";
+        $found = true;
+    }
+    if($_GET["pagina"] == "estatutos"){
         include "paginas/".$_GET["pagina"].".php";
         $found = true;
     }

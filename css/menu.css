@@ -288,7 +288,7 @@
 *******************************/
 
 .darkheader {
-    background-color: #152452 !important;
+    background-color: #000B67 !important;
     -moz-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
@@ -487,7 +487,7 @@
 
 @media (max-width: 768px) {
     #topnav {
-        background-color: #152452 !important;
+        background-color: #000B67 !important;
         box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2) !important;
     }
     #topnav .logo {

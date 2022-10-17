@@ -1,5 +1,5 @@
 <?php if(isset($_GET["pagina"])){
-    ?> <header id="topnav" class="defaultscroll fixed-top navbar-sticky darkheader" style="background-color: #152452 !important";> <?php
+    ?> <header id="topnav" class="defaultscroll fixed-top navbar-sticky darkheader" style="background-color: #000B67 !important";> <?php
 }else{
     ?> <header id="topnav" class="defaultscroll fixed-top navbar-sticky darkheader"> <?php
 } ?>
@@ -44,13 +44,13 @@
                             <a href="index.php?pagina=mision">Misión y Visión</a>
                         </li>
                         <li>
-                            <a href="index.php?pagina=blog-standard.html">Estatutos y codigo de ética</a>
+                            <a href="index.php?pagina=estatutos">Estatutos y codigo de ética</a>
                         </li>
                         <li>
                             <a href="index.php?pagina=organigrama">Organigrama</a>
                         </li>
                         <li>
-                            <a href="blog-post.html">Alianzas estrategicas</a>
+                            <a href="index.php?pagina=aliados-list">Alianzas estrategicas</a>
                         </li>
                         <li>
                             <a href="index.php?pagina=historia">Historia</a>

@@ -4,7 +4,7 @@ $("input[type='file']").change(function(){
 	var archivo = this.files[0];
 	var tipo = $(this).attr("name");
 
-	if (tipo == "carta_bienvenida" || tipo == "acta_compromiso" || tipo == "estudio_afiliacion" || tipo == "rut" || tipo == "camara_comercio" || tipo == "fechas_birthday") {
+	if (tipo == "carta_bienvenida" || tipo == "acta_compromiso" || tipo == "estudio_afiliacion" || tipo == "rut" || tipo == "camara_comercio" || tipo == "fechas_birthday" || tipo == "estatutos_doc" || tipo == "codigo_etica_doc") {
 		console.log("tipo: ", archivo["type"]);
 		if(archivo["type"] != "application/pdf"){
 
@@ -119,7 +119,7 @@ $("input[type='file']").change(function(){
 					<i class="fas fa-file-pdf" style="color: #E60026; font-size: 300px;"></i>
 				`)
 			}
-			
+
 
 		}
 	} else {

@@ -3168,6 +3168,48 @@ $(document).on("click", ".ingresarRecibodePago", function () {
 
 /*=====  End of Modal Ingresar pago  ======*/
 
+$(document).on("click", ".verEstatutos", function () {
+
+    var ver = $("#watch_estatutos_doc").val();
+    if (ver == 0) {
+        ver = false;
+    }
+    if (ver == 1) {
+        ver = true;
+    }
+    if (ver == false || ver == 'false') {
+        ver = true;
+    } else {
+        if (ver == true || ver == 'true') {
+            ver = false;
+        }
+    }
+    console.log('ver: ', ver);
+    $("#watch_estatutos_doc").val(ver);
+
+})
+
+$(document).on("click", ".verCodigoEtica", function () {
+
+    var ver2 = $("#watch_codigo_etica_doc").val();
+    if (ver2 == 0) {
+        ver2 = false;
+    }
+    if (ver2 == 1) {
+        ver2 = true;
+    }
+    if (ver2 == false || ver2 == 'false') {
+        ver2 = true;
+    } else {
+        if (ver2 == true || ver2 == 'true') {
+            ver2 = false;
+        }
+    }
+    console.log('ver: ', ver2);
+    $("#watch_codigo_etica_doc").val(ver2);
+
+})
+
 /*=====================================
 =            LIMPIAR RUTAS            =
 =====================================*/

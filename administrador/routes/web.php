@@ -94,12 +94,12 @@ Route::resource('/pagina_web/consultarNoticia', 'ConsultarNoticiaController');
 Route::resource('/pagina_web/eventos', 'PaginaWebController');
 Route::resource('/pagina_web/interesados', 'InteresadoController');
 Route::resource('/pagina_web/info/contacto', 'PaginaWebController');
-Route::resource('/pagina_web/info/estatutos', 'PaginaWebController');
-Route::resource('/pagina_web/info/gremio', 'PaginaWebController');
+Route::resource('/pagina_web/info/estatutos', 'EstatutosCodigoEticaController');
 Route::resource('/pagina_web/info/productos', 'ProductosController');
 Route::resource('/pagina_web/info/redes', 'PaginaWebController');
 Route::resource('/pagina_web/info/extra', 'ExtraPaginaWebController');
 Route::resource('/pagina_web/info/organigrama', 'OrganigramaController');
+Route::resource('/pagina_web/info/gremio_directivos', 'GremioDirectivosController');
 
 /*----------  Usuarios  ----------*/
 Route::resource('/usuarios/consultarUser', 'UsuariosController');

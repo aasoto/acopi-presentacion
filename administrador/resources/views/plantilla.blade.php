@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ACOPIsoft | CMS</title>
+    <link rel="shortcut icon" href="{{url('/')}}/vistas/images/logo-acopi-pestana.png">
 
 	<!--==================================
 	=            Plugins HTML            =

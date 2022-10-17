@@ -130,7 +130,7 @@
 
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('pagina_web/info/gremio') }}" class="nav-link">
+                                    <a href="{{ url('pagina_web/info/gremio_directivos') }}" class="nav-link">
                                         <i class="fas fa-user-tie nav-icon"></i>
                                         <p>Gremio y directivos</p>
                                     </a>
@@ -303,7 +303,7 @@
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ url('pagina_web/info/gremio') }}" class="nav-link">
+                                <a href="{{ url('pagina_web/info/gremio_directivos') }}" class="nav-link">
                                     <i class="fas fa-user-tie nav-icon"></i>
                                     <p>Gremio y directivos</p>
                                 </a>
@@ -548,7 +548,7 @@
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ url('pagina_web/info/gremio') }}" class="nav-link">
+                                <a href="{{ url('pagina_web/info/gremio_directivos') }}" class="nav-link">
                                     <i class="fas fa-user-tie nav-icon"></i>
                                     <p>Gremio y directivos</p>
                                 </a>
@@ -727,7 +727,7 @@
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ url('pagina_web/info/gremio') }}" class="nav-link">
+                                <a href="{{ url('pagina_web/info/gremio_directivos') }}" class="nav-link">
                                     <i class="fas fa-user-tie nav-icon"></i>
                                     <p>Gremio y directivos</p>
                                 </a>
@@ -988,7 +988,7 @@
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ url('pagina_web/info/gremio') }}" class="nav-link">
+                                <a href="{{ url('pagina_web/info/gremio_directivos') }}" class="nav-link">
                                     <i class="fas fa-user-tie nav-icon"></i>
                                     <p>Gremio y directivos</p>
                                 </a>

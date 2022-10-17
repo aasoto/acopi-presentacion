@@ -92,7 +92,7 @@
                                 <ul id="opcionesInfoGral" class="nav nav-treeview">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-6 col-12">
-                                            <a href="{{ url('pagina_web/info/gremio') }}">
+                                            <a href="{{ url('pagina_web/info/gremio_directivos') }}">
                                                 <div class="info-box shadow">
                                                     <span class="info-box-icon bg-primary"><i class="fas fa-user-tie"></i></span>
                                                     <div class="info-box-content">
@@ -244,7 +244,7 @@
                                 <ul id="opcionesInfoGral" class="nav nav-treeview">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-6 col-12">
-                                            <a href="{{ url('pagina_web/info/gremio') }}">
+                                            <a href="{{ url('pagina_web/info/gremio_directivos') }}">
                                                 <div class="info-box shadow">
                                                     <span class="info-box-icon bg-primary"><i class="fas fa-user-tie"></i></span>
                                                     <div class="info-box-content">
@@ -385,7 +385,7 @@
                                 <ul id="opcionesInfoGral" class="nav nav-treeview">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-6 col-12">
-                                            <a href="{{ url('pagina_web/info/gremio') }}">
+                                            <a href="{{ url('pagina_web/info/gremio_directivos') }}">
                                                 <div class="info-box shadow">
                                                     <span class="info-box-icon bg-primary"><i class="fas fa-user-tie"></i></span>
                                                     <div class="info-box-content">
@@ -534,7 +534,7 @@
                                 <ul id="opcionesInfoGral" class="nav nav-treeview">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-6 col-12">
-                                            <a href="{{ url('pagina_web/info/gremio') }}">
+                                            <a href="{{ url('pagina_web/info/gremio_directivos') }}">
                                                 <div class="info-box shadow">
                                                     <span class="info-box-icon bg-primary"><i class="fas fa-user-tie"></i></span>
                                                     <div class="info-box-content">
@@ -725,7 +725,7 @@
                                 <ul id="opcionesInfoGral" class="nav nav-treeview">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-6 col-12">
-                                            <a href="{{ url('pagina_web/info/gremio') }}">
+                                            <a href="{{ url('pagina_web/info/gremio_directivos') }}">
                                                 <div class="info-box shadow">
                                                     <span class="info-box-icon bg-primary"><i class="fas fa-user-tie"></i></span>
                                                     <div class="info-box-content">
