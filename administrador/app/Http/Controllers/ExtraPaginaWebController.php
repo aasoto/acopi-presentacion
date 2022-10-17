@@ -44,13 +44,22 @@ class ExtraPaginaWebController extends Controller
 
     		}else{
 
+                $origen = glob('vistas/images/temp/*');
+
+                foreach($origen as $fichero){
+                    copy($fichero, "vistas/images/pagina_web/extras/".substr($fichero, 19));
+                    unlink($fichero);
+                }
+
+                $pagina_web = PaginaWebModel::all();
+
     			$actualizar = array(
-    				'quienes_somos' => $datos["quienes_somos"],
-                    'mision' => $datos["mision"],
-                    'vision' => $datos["vision"],
-                    'historia' => $datos["historia"],
-    				'actualidad' => $datos["actualidad"],
-    				'proyeccion' => $datos["proyeccion"]
+    				'quienes_somos' => str_replace('src="'.$pagina_web[0]["servidor"].'vistas/images/temp', 'src="'.$pagina_web[0]["servidor"].'vistas/images/pagina_web/extras', $datos["quienes_somos"]),
+                    'mision' => str_replace('src="'.$pagina_web[0]["servidor"].'vistas/images/temp', 'src="'.$pagina_web[0]["servidor"].'vistas/images/pagina_web/extras', $datos["mision"]),
+                    'vision' => str_replace('src="'.$pagina_web[0]["servidor"].'vistas/images/temp', 'src="'.$pagina_web[0]["servidor"].'vistas/images/pagina_web/extras', $datos["vision"]),
+                    'historia' => str_replace('src="'.$pagina_web[0]["servidor"].'vistas/images/temp', 'src="'.$pagina_web[0]["servidor"].'vistas/images/pagina_web/extras', $datos["historia"]),
+    				'actualidad' => str_replace('src="'.$pagina_web[0]["servidor"].'vistas/images/temp', 'src="'.$pagina_web[0]["servidor"].'vistas/images/pagina_web/extras', $datos["actualidad"]),
+    				'proyeccion' => str_replace('src="'.$pagina_web[0]["servidor"].'vistas/images/temp', 'src="'.$pagina_web[0]["servidor"].'vistas/images/pagina_web/extras', $datos["proyeccion"])
     			);
 
     			$paginaweb = PaginaWebModel::where("id", $id)->update($actualizar);
