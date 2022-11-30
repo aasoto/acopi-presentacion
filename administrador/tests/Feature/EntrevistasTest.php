@@ -99,7 +99,7 @@ class EntrevistasTest extends TestCase
 
         $this->assertEquals($entrevista->titulo_entrevista, 'Prueba entrevista actualizada');
         $this->assertEquals($entrevista->descripcion_entrevista, 'Descripción actualizada');
-        $this->assertEquals($entrevista->video_entrevista, 'https://www.youtube.com/watch?v=-FuQMoXBFbQ');
+        $this->assertEquals($entrevista->video_entrevista, 'https://www.youtube.com/embed/-FuQMoXBFbQ');
         $response->assertRedirect('/pagina_web/entrevistas');
         $response->assertSessionHas('ok-crear');
     }

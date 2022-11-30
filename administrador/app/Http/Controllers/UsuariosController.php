@@ -316,10 +316,12 @@ class UsuariosController extends Controller
 
     public function destroy($id, Request $request)
     {
-        EmpleadosModel::where('email', $_POST['email'])->update(['id_usuario' => null]);
+        if(isset($_POST['email'])){
+            EmpleadosModel::where('email', $_POST['email'])->update(['id_usuario' => null]);
+        }
         $validar = UsuariosModel::where("id", $id)->get();
         if (!empty($validar) && $id != 1) {
-            if (!empty($validar[0]["foto"])) {
+            if (!empty($validar[0]["foto"]) && isset($_POST['email'])) {
                 unlink($validar[0]["foto"]);
             }
             $administrador = UsuariosModel::where("id", $validar[0]["id"])->delete();

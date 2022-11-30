@@ -136,12 +136,14 @@ class IndicadoresController extends Controller
     public function update($id, Request $request) {
         /*echo '<pre>'; print_r($id); echo '</pre>';
 		return;*/
-        $num_registros = DB::table('datos_rango')
-            ->where('id', 1)
-            ->update([
-                'rango' => $_POST['num_registros'],
-                'nombre' => $_POST['num_registros_nombre']
-            ]);
+        if (isset($_POST['num_registros'])) {
+            $num_registros = DB::table('datos_rango')
+                ->where('id', 1)
+                ->update([
+                    'rango' => $_POST['num_registros'],
+                    'nombre' => $_POST['num_registros_nombre']
+                ]);
+        }
 
         $mes = date("m", time());
         $year = date("Y", time());

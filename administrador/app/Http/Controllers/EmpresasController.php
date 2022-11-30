@@ -788,7 +788,6 @@ class EmpresasController extends Controller
     }
 
     public function destroy($id, Request $request){
-
         $validar = EmpresasModel::where("id_empresa", $id)->get();
         if(!empty($validar)){
             $empresa = EmpresasModel::where("id_empresa",$validar[0]["id_empresa"])->delete();

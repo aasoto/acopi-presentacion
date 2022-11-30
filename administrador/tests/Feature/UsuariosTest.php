@@ -10,6 +10,7 @@ use App\TipoDocumentoModel;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Hash;
 

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\DatosRangoModel;
 use App\PaginaWebModel;
 use App\MesesModel;
 use App\IndicadoresModel;
@@ -23,9 +24,10 @@ class IndicadoresTest extends TestCase
 
     /** @test */
     public function mostrar_indicadores_empresas(){
+        DatosRangoModel::factory()->create();
         PaginaWebModel::factory()->create();
         MesesModel::factory()->count(12)->create();
-        IndicadoresModel::factory()->count(12)->create();
+        IndicadoresModel::factory()->count(6)->create();
         $response = $this->get('/indicadores/empresas');
         $response -> assertOk();
         $indicadores = IndicadoresModel::all();
@@ -35,9 +37,10 @@ class IndicadoresTest extends TestCase
 
     /** @test */
     public function mostrar_indicadores_pagos(){
+        DatosRangoModel::factory()->create();
         PaginaWebModel::factory()->create();
         MesesModel::factory()->count(12)->create();
-        IndicadoresModel::factory()->count(12)->create();
+        IndicadoresModel::factory()->count(6)->create();
         $response = $this->get('/indicadores/recibos');
         $response -> assertOk();
         $indicadores = IndicadoresModel::all();
@@ -58,6 +61,7 @@ class IndicadoresTest extends TestCase
 
     /** @test */
     public function actualizar_indicadores(){
+        DatosRangoModel::factory()->create();
         MesesModel::factory()->count(12)->create();
         EmpresasModel::factory()->count(100)->create();
         PagosModel::factory()->count(300)->create();
@@ -72,11 +76,12 @@ class IndicadoresTest extends TestCase
         $empresas_inactivas = $indicadores->empresas_inactivas;
 
         for ($i=1; $i <= 100; $i++) {
-            $this->delete("/empresas/general/".$i);
+            $this->delete("/afiliados/consultarEmpresas/".$i);
         }
         for ($i=1; $i <= 300; $i++) {
             $this->delete("/pagos/general/".$i);
         }
+
         EmpresasModel::factory(100)->create();
         PagosModel::factory(300)->create();
 
