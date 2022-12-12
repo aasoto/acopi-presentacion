@@ -8,8 +8,10 @@ use App\RepresentanteEmpresaModel;
 use App\PaginaWebModel;
 use App\EmpleadosModel;
 use App\GeneroModel;
+use App\MunicipiosModel;
 use App\TipoDocumentoModel;
 use App\RolesModel;
+use Illuminate\Support\Facades\DB;
 
 class ExportarController extends Controller
 {
@@ -21,10 +23,15 @@ class ExportarController extends Controller
     		$afiliados = RepresentanteEmpresaModel::all();
     		return view("paginas.afiliados.exportar", array("afiliados"=>$afiliados));
     	}
-    	
+
     	if (url()->current() == ($web["servidor"]."afiliados/exportarEmpresas")) {
-    		$empresas = EmpresasModel::all();
-    		return view("paginas.afiliados.exportarEmpresas", array("empresas"=>$empresas));
+            $empresas = DB::table('empresas')
+                ->join('sector_empresa', 'empresas.id_sector_empresa', '=', 'sector_empresa.id_sector')
+                ->join('representante_empresa', 'empresas.cc_rprt_legal', '=', 'representante_empresa.cc_rprt_legal')
+                ->select('empresas.*', 'representante_empresa.*', 'sector_empresa.nombre_sector')
+            ->get();
+            $municipios = MunicipiosModel::all();
+    		return view("paginas.afiliados.exportarEmpresas", array("empresas"=>$empresas, "municipios"=>$municipios));
     	}
 
         if (url()->current() == ($web["servidor"]."empleados/exportar")) {

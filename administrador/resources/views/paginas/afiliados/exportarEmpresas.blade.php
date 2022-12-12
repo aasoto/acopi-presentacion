@@ -62,25 +62,38 @@
                       $contador = 1;
                     @endphp
                     @foreach ($empresas as $key => $value)
-                      
-                    
+
+
                     <tr>
                       <td>{{$contador++}}</td>
-                      <td>{{$value["nit_empresa"]}}</td>
-                      <td>{{$value["razon_social"]}}</td>
-                      <td>{{$value->nombre["primer_apellido"]." ".$value->nombre["segundo_apellido"]." ".$value->nombre["primer_nombre"]." ".$value->nombre["segundo_nombre"]}}</td>
-                      <td>{{$value["num_empleados"]}}</td>
-                      <td>{{$value["direccion_empresa"]}}</td>
-                      <td>{{$value["telefono_empresa"]}}</td>
-                      <td>{{$value["fax_empresa"]}}</td>
-                      <td>{{$value["celular_empresa"]}}</td>
-                      <td>{{$value["email_empresa"]}}</td>
-                      <td>{{$value->sector["nombre_sector"]}}</td>
-                      <td>{{$value["productos_empresa"]}}</td>
-                      <td>{{$value["ciudad_empresa"]}}</td>
-                      <td>{{$value["estado_afiliacion_empresa"]}}</td>
-                      <td>{{$value["numero_pagos_atrasados"]}}</td>
-                      <td>{{$value["fecha_afiliacion_empresa"]}}</td>
+                      <td>{{$value->nit_empresa}}</td>
+                      <td>{{$value->razon_social}}</td>
+                      <td>{{$value->primer_apellido." ".$value->segundo_apellido." ".$value->primer_nombre." ".$value->segundo_nombre}}</td>
+                      <td>{{$value->num_empleados}}</td>
+                      <td>{{$value->direccion_empresa}}</td>
+                      <td>{{$value->telefono_empresa}}</td>
+                      <td>{{$value->fax_empresa}}</td>
+                      <td>{{$value->celular_empresa}}</td>
+                      <td>{{$value->email_empresa}}</td>
+                      <td>{{$value->nombre_sector}}</td>
+                      <td>
+                        @php
+                            $value->productos_empresa = json_decode($value->productos_empresa);
+                        @endphp
+                        @foreach ($value->productos_empresa as $llave => $valor)
+                            {{$valor.", "}}
+                        @endforeach
+                      </td>
+                      <td>
+                        @foreach ($municipios as $llave => $valor)
+                            @if ($value->ciudad_empresa == $valor['abreviatura'])
+                                {{$valor['nombre']}}
+                            @endif
+                        @endforeach
+                      </td>
+                      <td>{{$value->estado_afiliacion_empresa}}</td>
+                      <td>{{$value->numero_pagos_atrasados}}</td>
+                      <td>{{$value->fecha_afiliacion_empresa}}</td>
                     </tr>
 
                     @endforeach
@@ -108,7 +121,7 @@
                 </table>
               </div>
               <div class="card-footer">
-                
+
               </div>
             </div>
           </div>
